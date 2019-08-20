@@ -1,8 +1,6 @@
 const express = require('express');
 
-const db = require('../data/db-config.js');
-
-const Projects = require('./project-model.js.js');
+const Projects = require('./project-model.js');
 
 const router = express.Router();
 
