@@ -33,6 +33,23 @@ exports.up = function(knex) {
                 .notNullable()
                 .references('project.id');
         })
+        .createTable('project_resources', tbl => {
+            tbl.integer('project_id')
+                .unsigned()
+                .notNullable()
+                .references('id')
+                .inTable('project')
+                .onUpdate('CASCADE')
+                .onDelete('CASCASE');
+            tbl.integer('resource_id')
+                .unsigned()
+                .notNullable()
+                .references('id')
+                .inTable('project')
+                .onUpdate('CASCADE')
+                .onDelete('CASCADE');
+            tbl.primary(['project_id', 'resource_id']);
+        })
 };
 
 exports.down = function(knex) {
