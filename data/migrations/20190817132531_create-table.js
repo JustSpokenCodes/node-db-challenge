@@ -6,7 +6,7 @@ exports.up = function(knex) {
             tbl.text('name', 199)
                 .notNullable();
             tbl.string('description');
-            tbl.boolean('completed'("0"))
+            tbl.boolean('completed')
                 .defaultTo(false);
         })
         .createTable('resource', tbl => {
@@ -21,11 +21,10 @@ exports.up = function(knex) {
         })
         .createTable('task', tbl => {
             tbl.increments();
-            tbl.string('name', 199);
             tbl.string('description')
                 .notNullable();
             tbl.text('notes');
-            tbl.boolean('compeleted'("0"))
+            tbl.boolean('compeleted')
                 .defaultTo(false);
             tbl.integer('project_id')
                 .unsigned()
