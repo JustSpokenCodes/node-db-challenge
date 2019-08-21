@@ -7,7 +7,6 @@ exports.up = function(knex) {
                 .notNullable();
             tbl.string('description');
             tbl.boolean('completed')
-                .notNullable()
                 .defaultTo(false);
         })
         .createTable('resource', tbl => {
@@ -18,20 +17,20 @@ exports.up = function(knex) {
             tbl.integer('project_id')
                 .unsigned()
                 .notNullable()
-                .references('project.id');
+                .references('id');
         })
         .createTable('task', tbl => {
             tbl.increments();
-            tbl.string('description', 199)
+            tbl.string('name', 199);
+            tbl.string('description')
                 .notNullable();
             tbl.text('notes');
             tbl.boolean('compeleted')
-                .notNullable()
                 .defaultTo(false);
             tbl.integer('project_id')
                 .unsigned()
                 .notNullable()
-                .references('project.id');
+                .references('id');
         })
         .createTable('project_resource', tbl => {
             tbl.integer('project_id')
@@ -59,3 +58,5 @@ exports.down = function(knex) {
     .dropTableIfExists('resource')
     .dropTableIfExists('project');
 };
+
+// i need to have the join table last so that why when we delete it, those will be the first things to be deleted
