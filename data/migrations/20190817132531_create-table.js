@@ -24,7 +24,7 @@ exports.up = function(knex) {
             tbl.string('description')
                 .notNullable();
             tbl.text('notes');
-            tbl.boolean('compeleted')
+            tbl.boolean('completed')
                 .defaultTo(false);
             tbl.integer('project_id')
                 .unsigned()
