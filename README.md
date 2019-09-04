@@ -39,12 +39,16 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
+  { SQL or structed query language makes you use predefined schemas to determine the structure of your data before you work with it. It is a very organized app due to the fact that data must follow the same structure to find results. }
 
 - [ ] Why do tables need a `primary key`?
+  { tables need a 'primary key' because it makes sure row accessibility. Primary keys are unique meaning that it cannot be repeated.}
 
 - [ ] What is the name given to a table column that references the primary key on another table.
+  { foreign key }
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+  { middle table}
 
 ## Minimum Viable Product
 
@@ -102,7 +106,7 @@ A `project` is what needs to be done. We want to store the following data about 
 - [ ] a name. This column is required.
 - [ ] a description.
 - [ ] a boolean that indicates if the project has been completed. This column cannot be NULL, the default value should be `false`.
-
+// interger is not a valid answer because if there wasnt extra code then that number could be anything.
 A `resource` is anything needed to complete a project, some examples are: a person, a tool, a meeting room or a software license. We want to store the following data about a `resource`:
 
 - [ ] a unique Id.
